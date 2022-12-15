@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bwa_cozy/pages/homepagescreen.dart';
 import 'package:bwa_cozy/theme/colorPalette.dart';
 import 'package:bwa_cozy/theme/styleText.dart';
@@ -15,26 +16,33 @@ class Splashscreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsets.only(top: 50, left: 30),
-                    child: Image.asset(
-                        height: 50, width: 50, 'assets/images/logo/logo.png'),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 30, left: 30),
-                    child: Text(
-                      "Find Cozy House\nto Stay and Happy",
-                      style: mediumText.copyWith(fontSize: 24, color: hitam),
+                  FadeInDown(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 50, left: 30),
+                      child: Image.asset(
+                          height: 50, width: 50, 'assets/images/logo/logo.png'),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 10, left: 30),
-                    child: Text(
-                      "Stop membuang waktu\npada tempat yang tidak habitable",
-                      style: lightText.copyWith(fontSize: 16, color: abu),
+                  FadeInLeft(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 30, left: 30),
+                      child: Text(
+                        "Find Cozy House\nto Stay and Happy",
+                        style: mediumText.copyWith(fontSize: 24, color: hitam),
+                      ),
                     ),
                   ),
-                  Padding(
+                  FadeInLeft(
+                    child: Padding(
+                      padding: EdgeInsets.only(top: 10, left: 30),
+                      child: Text(
+                        "Stop membuang waktu\npada tempat yang tidak habitable",
+                        style: lightText.copyWith(fontSize: 16, color: abu),
+                      ),
+                    ),
+                  ),
+                  FadeInLeft(
+                      child: Padding(
                     padding: EdgeInsets.only(top: 40, left: 30),
                     child: Container(
                       height: 50,
@@ -58,13 +66,14 @@ class Splashscreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  )
+                  ))
                 ],
               ),
-              Align(
+              FadeInUp(
+                  child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Image.asset('assets/images/splash/splash_image.png'),
-              )
+              ))
             ],
           )),
     );
