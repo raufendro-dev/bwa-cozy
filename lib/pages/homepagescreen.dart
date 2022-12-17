@@ -4,6 +4,7 @@ import 'package:bwa_cozy/models/space.dart';
 import 'package:bwa_cozy/models/tips.dart';
 import 'package:bwa_cozy/theme/colorPalette.dart';
 import 'package:bwa_cozy/theme/styleText.dart';
+import 'package:bwa_cozy/widgets/bottomnavbaritem.dart';
 import 'package:bwa_cozy/widgets/citycard.dart';
 import 'package:bwa_cozy/widgets/spacecard.dart';
 import 'package:bwa_cozy/widgets/tipscard.dart';
@@ -150,14 +151,41 @@ class Homepagescreen extends StatelessWidget {
                   child: Tipscard(tipslist[0]),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 16, left: 24),
+                  padding: EdgeInsets.only(top: 16, left: 24, bottom: 50),
                   child: Tipscard(tipslist[1]),
+                ),
+                SizedBox(
+                  height: 50,
                 )
               ],
             ))
           ],
         ),
       ),
+      floatingActionButton: FadeInUp(
+        duration: Duration(seconds: 2),
+        child: Container(
+          height: 65,
+          width: MediaQuery.of(context).size.width - (2 * 24),
+          margin: EdgeInsets.symmetric(horizontal: 24),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(23), color: abu2),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Bottomnavbaritem(
+                  gambar: 'assets/images/icon/home.png', isActive: true),
+              Bottomnavbaritem(
+                  gambar: 'assets/images/icon/mail.png', isActive: false),
+              Bottomnavbaritem(
+                  gambar: 'assets/images/icon/card.png', isActive: false),
+              Bottomnavbaritem(
+                  gambar: 'assets/images/icon/love.png', isActive: false),
+            ],
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

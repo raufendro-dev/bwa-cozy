@@ -70,10 +70,11 @@ class Splashscreen extends StatelessWidget {
                 ],
               ),
               FadeInUp(
+                  duration: Duration(seconds: 2),
                   child: Align(
-                alignment: Alignment.bottomCenter,
-                child: Image.asset('assets/images/splash/splash_image.png'),
-              ))
+                    alignment: Alignment.bottomCenter,
+                    child: Image.asset('assets/images/splash/splash_image.png'),
+                  ))
             ],
           )),
     );
